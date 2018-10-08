@@ -1,0 +1,2 @@
+# specs
+Bara Specification Document
