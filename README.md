@@ -12,6 +12,7 @@ Bara help you create almost anything you can imaging with the stream of events, 
 
 ## Table of Contents
 
+- [Architecture](/architecture)
 - [Background](#background)
 - [Install](#install)
 - [Usage](#usage)
