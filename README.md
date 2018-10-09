@@ -1,6 +1,8 @@
 # Bara Specifications
 
-![bara banner](img/banner.png)
+<p align="center">
+  <img align="center" src="./img/BaraBanner.png" width="100%" alt="Bara" />
+</p>
 
 [![standard-readme compliant](https://img.shields.io/badge/standard--readme-OK-green.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 
