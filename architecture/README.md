@@ -56,7 +56,7 @@ const events = {
 const FileStream = createStream({
   id: "org.barajs.stream.file",
   name: "Bara Stream File",
-  events: 
+  events: events,
   method: {
     init: (emit, payload) => {
       // Define the location to watch files.
