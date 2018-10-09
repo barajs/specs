@@ -5,6 +5,7 @@ This spec document defines the way Bara work with stream of events, conditions, 
 ## Table of Contents
 
 - [Main](#main)
+- [Stream](#stream)
 - [Trigger](#trigger)
 - [Event](#event)
 - [Condition](#condition)
@@ -31,6 +32,14 @@ const AwesomeFileService = bara("awesome-file-service", streams, triggers);
 
 export default AwesomeFileService;
 ```
+
+## Stream
+- A Stream is the list of events emitted over the timeline of process.
+- A Stream can be registered to Main Bara process to listen on a specific event.
+- A Stream does not take care of which action will consume the event.
+- A Stream only take care of one type of event with different payload.
+
+  
 
 ## Event
 
