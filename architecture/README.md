@@ -15,23 +15,22 @@ This spec document defines the way Bara work with stream of events, conditions, 
 - A main is a Bara function which will do the registration of streams and trigger.
 - A main function can be a Bara module to combine with other Bara module.
 
+- This is the example main.js file implementation:
 
 ```javascript
-import {createMain, registerStream, registerTrigger} from 'bara';
-import StreamFile from 'bara-stream-file';
-import TriggerFileChange from 'bara-trigger-file-change';
-import TriggerCountFile from 'bara-trigger-count-file';
+import bara from "bara";
+import StreamFile from "bara-stream-file";
+import TriggerFileChange from "bara-trigger-file-change";
+import TriggerCountFile from "bara-trigger-count-file";
 
-const streams = registerStream([StreamFile]);
+const streams = [StreamFile("~/Data")];
 
-const triggers = registerTrigger([TriggerOne, TriggerTwo]);
+const triggers = [TriggerFileChange, TriggerCountFile]);
 
-const AwesomeFileService = createMain('awesome-file-service', streams, triggers)
+const AwesomeFileService = bara("awesome-file-service", streams, triggers);
 
 export default AwesomeFileService;
-
 ```
-
 
 ## Event
 
