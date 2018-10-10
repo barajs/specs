@@ -1,7 +1,7 @@
 # ![](https://img.shields.io/badge/status-wip-orange.svg?style=flat-square) Bara Architecture Overview
 
 <p align="center">
-  <img align="center" src="../img/BaraLogo.png" width="100%" alt="Bara" />
+  <img align="center" src="../img/BaraLogo.png" width="50%" alt="Bara" />
 </p>
 
 This spec document defines the way Bara work with stream of events, conditions, and actions.
@@ -47,7 +47,7 @@ export default AwesomeFileService;
 Code usage example:
 
 ```javascript
-import {registerStream, createEventType} from "bara";
+import {registerStream, createEventType, createEmitEvent} from "bara";
 import chokidar from "chokidar";
 
 const events = {
@@ -59,7 +59,8 @@ const FileStream = createStream({
   id: "org.barajs.stream.file",
   name: "Bara Stream File",
   events: events,
-  method: {
+  methods: {
+    // Define the initializer of stream
     init: (emit, payload) => {
       // Define the location to watch files.
       const pathToWatch = payload;
@@ -71,6 +72,9 @@ const FileStream = createStream({
       watcher
         .on('add', path => emit(events.FILE_CREATED, path));
         .on('change', path => emit(events.FILE_CHANGED, path));
+    },
+    onEvent: (eventType, payload) => {
+      return createEmitEvent(eventType, payload);
     }
   }
 });
@@ -78,9 +82,19 @@ const FileStream = createStream({
 export default FileStream;
 ```
 
+## Trigger
+
+- A trigger is built from 3 facts: Events, Conditions, and Actions.
+- A trigger required at least one Event to be triggered, and a trigger can have only one Event registered at a time.
+- A trigger can have Conditions or not, if no condition is specified in the trigger, any of the registered Event(s) can trigger its Actions.
+- A trigger can be called/executed from another trigger directly when needed (omitting the Event also possible, but it should required direct Event input).
+
 ## Event
 
-An event is ...
+- In the Bara's trigger, an event is emitted from the Stream.
+- An Event should have a declarative name to reference with the Event Source (who emitted the event).
+- An Event should filter the Stream in general case, such as: `A file is changed` or `A button is clicked`.
+- An Event can have specific targeted event listener like: `A file with extension .mp3 is changed` or `Login button is clicked`.
 
 ## Condition
 
