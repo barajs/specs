@@ -1,7 +1,8 @@
+# ![](https://img.shields.io/badge/status-wip-orange.svg?style=flat-square) Bara Architecture Overview
+
 <p align="center">
   <img align="center" src="../img/BaraLogo.png" width="100%" alt="Bara" />
 </p>
-# Bara Architecture Overview
 
 This spec document defines the way Bara work with stream of events, conditions, and actions.
 
@@ -37,6 +38,7 @@ export default AwesomeFileService;
 ```
 
 ## Stream
+
 - A Stream is the list of events emitted over the time of Bara process.
 - A Stream can be registered to a Bara main module to listen on a specific event.
 - A Stream does not take care of which trigger will consume the emitting event.
@@ -61,10 +63,10 @@ const FileStream = createStream({
     init: (emit, payload) => {
       // Define the location to watch files.
       const pathToWatch = payload;
-    
+
       // Register file watcher.
       const watcher = chokidar(pathToWatch);
-      
+
       // Emit event to the stream when a file is added.
       watcher
         .on('add', path => emit(events.FILE_CREATED, path));
@@ -75,9 +77,6 @@ const FileStream = createStream({
 
 export default FileStream;
 ```
-
-
-  
 
 ## Event
 
