@@ -45,7 +45,7 @@ export default AwesomeFileService;
 Code usage example:
 
 ```javascript
-import {registerStream, createEventType} from "bara";
+import {registerStream, createEventType, createEmitEvent} from "bara";
 import chokidar from "chokidar";
 
 const events = {
@@ -57,7 +57,8 @@ const FileStream = createStream({
   id: "org.barajs.stream.file",
   name: "Bara Stream File",
   events: events,
-  method: {
+  methods: {
+    // Define the initializer of stream
     init: (emit, payload) => {
       // Define the location to watch files.
       const pathToWatch = payload;
@@ -69,6 +70,9 @@ const FileStream = createStream({
       watcher
         .on('add', path => emit(events.FILE_CREATED, path));
         .on('change', path => emit(events.FILE_CHANGED, path));
+    },
+    onEvent: (eventType, payload) => {
+      return createEmitEvent(eventType, payload);
     }
   }
 });
