@@ -98,8 +98,13 @@ export default FileStream;
 
 ## Condition
 
-A condition is ...
+- A condition is the event filtered at the trigger scope.
+- A condition can receive event reference from the trigger's event.
+- A collection of conditions can be combined to have a more complex condition.
+
 
 ## Action
 
-An action is ...
+- An action is the sequence of statements defined by the user.
+- An action can receive event reference from the trigger's event.
+- An action can have reference to the global application store to access others in the memory.
