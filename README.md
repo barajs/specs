@@ -22,6 +22,7 @@ Bara help you create almost anything you can imaging with the stream of events, 
 
 ## Table of Contents
 
+- [Platform](#platform)
 - [Architecture](/architecture)
 - [Background](#background)
 - [Install](#install)
@@ -30,6 +31,17 @@ Bara help you create almost anything you can imaging with the stream of events, 
 - [Maintainers](#maintainers)
 - [Contribute](#contribute)
 - [License](#license)
+
+## Platform
+
+- [ ] Bara Core Library (TypeScript)
+- [ ] Bara CLI (TypeScript, Go, Deb Package, Brew Package)
+- [ ] Bara Editor (Electron, Web, Mobile)
+- [ ] Bara Dev Tools (Electron, Chrome Extension)
+- [ ] Bara DevOps (Dokku, Client CLI)
+- [ ] Static Site Hosting (Decentrailize File System with IPFS, Bara CLI)
+- [ ] Bara Compute (Decentralize Computing Gateway)
+- [ ] BaraDB (Decentralize Database, GraphQL)
 
 ## Background
 
