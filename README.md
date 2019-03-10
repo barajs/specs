@@ -34,7 +34,10 @@ Bara help you create almost anything you can imaging with the stream of events, 
 
 ## Platform
 
-- [ ] Bara Core Library (TypeScript)
+### Working
+- [x] Bara Core Library (TypeScript)
+
+### Proposal
 - [ ] Bara CLI (TypeScript, Go, Deb Package, Brew Package)
 - [ ] Bara Editor (Electron, Web, Mobile)
 - [ ] Bara Dev Tools (Electron, Chrome Extension)
